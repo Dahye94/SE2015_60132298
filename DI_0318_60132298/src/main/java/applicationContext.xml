@@ -3,22 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="professor" class="Professor">
-	<constructor-arg>
-		<value>홍길동</value>
-	</constructor-arg>
+<bean id="gwamokManager" class="CGwamokManager">
+	<property name="dao">
+		<ref bean="dao" />
+	</property>
 </bean>
 
-<bean id="Lecture2" class="Lecture">
-	<constructor-arg>
-		<value>C언어</value>
-	</constructor-arg>
-</bean>
+<bean id="dao" class="DAO">
 
-<bean id="student" class="Student">
-	<constructor-arg>
-		<value>이다혜</value>
-	</constructor-arg>
+</bean>
+<bean id="gwamok" class="EGwamok">
+	<constructor-arg value="0001"></constructor-arg>
+	<constructor-arg value="소프트웨어공학"></constructor-arg>
+	<constructor-arg value="3"></constructor-arg>
 </bean>
 
 </beans>
